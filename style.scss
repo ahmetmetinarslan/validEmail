@@ -1,0 +1,221 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+:root {
+    --Tomato: hsl(4, 100%, 67%);
+    --DarkSlateGrey: hsl(234, 29%, 20%);
+    --CharcoalGrey: hsl(235, 18%, 26%);
+    --Grey: hsl(231, 7%, 60%);
+    --White: hsl(0, 0%, 100%);
+}
+body {
+    font-family: 16px;
+    font-family: 'Roboto', sans-serif;
+    background-color: var(--CharcoalGrey);
+    display: flex;
+    justify-content: center;
+    margin-top: 7rem;
+    .signup-display {
+        display: inline;
+    }
+    .success-display {
+        display: none;
+    }
+    .container {
+        width: 55rem;
+        height: 40rem;
+        overflow: hidden;
+        background-color: var(--White);
+        border-radius: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+        .left {
+            width: 45%;
+            height: 80%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-evenly;
+            .left-text {
+                h1 {
+                    font-weight: 700;
+                    font-size: 3rem;
+                    margin-bottom: 15px;
+                }
+                p {
+                    font-weight: 400;
+                }
+            }
+            .left-product {
+                display: flex;
+                flex-direction: column;
+                gap: 20px;
+                .left-product-item {
+                    display: flex;
+                    align-items: center;
+                    img {
+                        padding-right: 10px;
+                    }
+                }
+            }
+            .left-email-form {
+                display: flex;
+                flex-direction: column;
+                gap: 5px;
+                .labels{
+                    display: flex;
+                    justify-content: space-between;
+                    margin-bottom: 5px;
+                    font-size: smaller;
+                    .email-err-msg {
+                        margin-right: 45px;
+                        color: hsl(4, 100%, 67%);
+                        display: none;
+                        font-weight: bold;
+                    }
+                }
+                input {
+                    width: 90%;
+                    height: 55px;
+                    border-radius: 10px;
+                    border: 1px solid #ebebeb;
+                    padding: 10px;
+                    outline: none;
+                    margin-bottom: 20px;
+                }
+                input:focus {
+                    border-color: var(--DarkSlateGrey);
+                }
+                button {
+                    width: 90%;
+                    height: 55px;
+                    background-color: var(--CharcoalGrey);
+                    border: none;
+                    color: var(--White);
+                    font-weight: 500;
+                    font-size: 16px;
+                    cursor: pointer;
+                    border-radius: 10px;
+                }
+                button:hover {
+                    background-color: var(--Tomato);
+                }
+            }
+        }
+        .right {
+            width: 45%;
+            .mobile-svg {
+                display: none;
+            }
+        }
+    }
+    .success-container {
+        width: 30rem;
+        height: 31rem;
+        overflow: hidden;
+        background-color: var(--White);
+        border-radius: 30px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 30px;
+        box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
+        .success {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            width: 90%;
+            height: 90%;
+            .success-text {
+                h1 {
+                    font-size: 3rem;
+                    margin-bottom: 20px;
+                }
+                p {
+                    line-height: 23px;
+                }
+            }
+            .success-btn {
+                button {
+                    width: 100%;
+                    height: 55px;
+                    border: none;
+                    border-radius: 10px;
+                    padding: 10px;
+                    background-color: var(--DarkSlateGrey);
+                    color: #fff;
+                    font-weight: bold;
+                    cursor: pointer;
+                }
+                button:hover {
+                    background-color: var(--Tomato);
+                }
+            }
+        } 
+    }
+}
+
+@media (max-width: 375px) {
+    body {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        margin-top: auto;
+        .container {
+            width: auto;
+            height: auto;
+            display: flex;
+            flex-direction: column-reverse;
+            border-radius: 0;
+            .right {
+                width: auto;
+                .desktop-svg {
+                    display: none;
+                }
+                .mobile-svg {
+                    display: inline;
+                }
+            }
+            .left {
+                width: 90%;
+                margin-top: 30px;
+                margin-left: 30px;
+                .left-text {
+                    margin-bottom: 30px;
+                }
+                .left-product {
+                    margin-bottom: 30px;
+                }
+                .left-email-form {
+                    margin-bottom: 30px;
+                }
+            }
+        }
+        .success-container {
+            width: auto;
+            height: auto;
+            display: flex;
+            flex-direction: column-reverse;
+            border-radius: 0;
+            .success {
+                width: auto;
+                height: 750px;
+                .success-img {
+                    margin-top: 150px;
+                }
+                .success-text {
+                    margin-bottom: 200px;
+                }
+            }
+        }
+    }
+}
+
+
+
+
+
